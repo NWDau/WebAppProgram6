@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
-
+ 
 <body>
-    
+
+<title>Actors</title>
 <h2>Actors by Dau</h2>
 
 <form>
-    <label for="actor">Denzel Washington</label>
-    <input type="password" id="actor" value="Rubin Carter"> <br>
+    <label for="actor">Peter Pan</label>
+    <input type ="password" id="actor" value="Robin Williams"> <br>
 
-    <label for="guess">Who is the actor</label>
-    <input type="text" id="guess"> <br>
+    <label for="guess">Who is the actor </label>
+    <input type ="text" id="guess"> <br>
 
     <input type="button" onclick="checkActor()" value="Check the guess">
 </form>
 
+
 <p id="result">Correct: 0 | Incorrect: 0</p>
 
-<script>
+<script> 
 
 let correct = 0;
 let notCorrect = 0;
 
-function checkActor() {
+function checkActor (){
     console.log("Checking actor guess")
-
     actor = document.getElementById("actor").value
     guess = document.getElementById("guess").value
-
-    if (actor == guess) {
+    
+    if(actor == guess){
         correct++
         alert("That's right")
     } else {
         notCorrect++
         alert("Better luck next time")
     }
-
+    
     out = document.getElementById("result")
     out.innerHTML = "Correct: " + correct + " | Incorrect: " + notCorrect
 }
-
 </script>
 
 </body>
