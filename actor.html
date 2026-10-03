@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html>
- 
-<body>
 
-<h2>Actors By</h2>
+<body>
+    
+<h2>Actors by Dau</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="actor">Denzel Washington</label>
+    <input type="password" id="actor" value="Rubin Carter"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="guess">Who is the actor</label>
+    <input type="text" id="guess"> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <input type="button" onclick="checkActor()" value="Check the guess">
 </form>
 
+<p id="result">Correct: 0 | Incorrect: 0</p>
 
-<p id="result">This text will be replaced </p>
+<script>
 
-<script> 
+let correct = 0;
+let notCorrect = 0;
 
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
+function checkActor() {
+    console.log("Checking actor guess")
+
+    actor = document.getElementById("actor").value
+    guess = document.getElementById("guess").value
+
+    if (actor == guess) {
+        correct++
+        alert("That's right")
     } else {
-        out.innerHTML = "Values were not confirmed"
+        notCorrect++
+        alert("Better luck next time")
     }
+
+    out = document.getElementById("result")
+    out.innerHTML = "Correct: " + correct + " | Incorrect: " + notCorrect
 }
+
 </script>
 
 </body>
-</html> 
+</html>
+
