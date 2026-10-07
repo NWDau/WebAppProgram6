@@ -2,8 +2,9 @@
 <html>
  
 <body>
+    <title>Computation</title>
 
-<h2>Getting input</h2>
+<h2>Dau Sales computation</h2>
 
 <form>
     <label for="form1_age">What is your age </label>
@@ -34,6 +35,50 @@ function resolveForm (){
     }
 }
 </script>
+
+<h2>Dau Sales computations</h2> 
+<form> 
+    <label for="numberItems">Enter number items</label> 
+    <input type="number" id="numberItems" value="1">
+
+     <br><br> 
+
+     <label for="itemCost">Enter the cost of one item</label> 
+     <input type="number" id="itemCost" value="20.0"> 
+
+     <br><br> 
+
+     <label for="numberForDiscount">Enter number to get discount</label> 
+     <input type="number" id="numberForDiscount" value="10">
+
+      <br><br> 
+
+      <label for="discountRate">Enter the discount rate</label> 
+      <input type="number" id="discountRate" value="0.15"> 
+
+      <br><br> 
+
+      <button type="button" onclick="doDiscount()">Show costs</button> 
+</form> 
+
+<p id="results"></p> 
+<script>
+     function doDiscount() 
+     { 
+        let number = parseInt(document.getElementById("numberItems").value); 
+        let cost = parseFloat(document.getElementById("itemCost").value); 
+        let discountRate = parseFloat(document.getElementById("discountRate").value);
+        let discountAt = parseInt(document.getElementById("numberForDiscount").value);
+        let costs = ""; for (let checkCount = number; checkCount <= 5 * number; checkCount += number) 
+            { 
+            let totalCost; if (checkCount < discountAt) { totalCost = checkCount * cost; } 
+                else { totalCost = (discountAt * cost) + ((checkCount - discountAt) * cost * (1 - discountRate)); } costs += checkCount + " number is " + totalCost + "; "; }
+                document.getElementById("results").innerHTML = "Costs are: " + costs;} 
+</script>
+
+
+
+
 
 </body>
 </html> 
