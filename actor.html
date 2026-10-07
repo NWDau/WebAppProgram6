@@ -70,22 +70,22 @@ function checkActor (){
 <script>
     let usePic = 1;
 
-    function updatePic(){
-        const imgElement = document.getElementByID("data-value");
+    function updatePic(imgElement){
+        usePic = parseInt(imgElement.getAttribute("data-value"));
 
         switch(usePic){
             case 1:
-                imgElement.src = "Apple.jpg";
+                imgElement.src = "BiscutDonuts.webp";
                 imgElement.setAttribute("data-value", "2");
                 break; 
             
             case 2:
-                imgElement.src = "BiscutDonuts.webp";
+                imgElement.src = "Mango.jpg";
                 imgElement.setAttribute("data-value", "3");
                 break;
 
             case 3:
-                imgElement.src = "Mango.jpg";
+                imgElement.src = "Apple.jpg";
                 imgElement.setAttribute("data-value", "1")
                 break;
 
