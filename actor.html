@@ -45,18 +45,53 @@ function checkActor (){
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <img src="Apple.jpg" class="img-fluid">
+      <img src="Apple.jpg" class="img-fluid" height="150" width="150"
+      alt="SlideShow image"
+      data-value="1"
+      onclick="updatePic(this)">
+
+
     </div>
     <div class="col-md-4">
-      <img src="Mango.jpg" class="img-fluid">
+      <img src="Mango.jpg" class="img-fluid" height="150" width="150"
+      alt="SlideShow image"
+      data-value="2"
+      onclick="updatePic(this)">
     </div>
     <div class="col-md-4">
-      <img src="BiscutDonuts.webp" class="img-fluid">
+      <img src="BiscutDonuts.webp" class="img-fluid" height="150" width="150"
+      alt="SlideShow image"
+      data-value="3"
+      onclick="updatePic(this)">
     </div>
   </div>
 </div>
 
+<script>
+    let usePic = 1;
 
+    function updatePic(){
+        const imgElement = document.getElementByID("data-value");
+
+        switch(usePic){
+            case 1:
+                imgElement.src = "Apple.jpg";
+                imgElement.setAttribute("data-value", "2");
+                break; 
+            
+            case 2:
+                imgElement.src = "BiscutDonuts.webp";
+                imgElement.setAttribute("data-value", "3");
+                break;
+
+            case 3:
+                imgElement.src = "Mango.jpg";
+                imgElement.setAttribute("data-value", "1")
+                break;
+
+        }
+    }
+</script>
 
 
 
