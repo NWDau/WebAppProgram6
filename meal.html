@@ -16,7 +16,7 @@
     <input type="checkbox" id="dinner" name="meal3" value="True">
     <label for="dinner">Dinner</label><br>
 
-    <input type="button" onclick="choices()" value="Meal Plan Choices">
+    <input type="button" onclick="startmeal()" value="Meal Plan Choices">
 
 </form>
 
@@ -52,16 +52,29 @@
 <script> 
 let my_meal_plan = {};
 
-function choices(){
+function startMeal(){
     my_meal_plan = {};
 
     my_meal_plan.breakfast = document.getElementById("breakfast").checked;
-    my_meal_plan.lunch = document.getElementaryById("lunch").checked;
+    my_meal_plan.lunch = document.getElementById("lunch").checked;
     my_meal_plan.dinner = document.getElementById("dinner").checked;
 
     out = document.getElementById("result");
-    out.innerHTML = JSON.string*ify(my_meal_plan);
+    out.innerHTML = my_meal_plan;
 }
+
+
+function updateMeal() {
+    cuisine = document.getElementById("cuisine").value;
+    beverage = document.getElementById("beverage").value;
+
+    my_meal_plan['cuisine'] = cuisine;
+    my_meal_plan["beverage"] = beverage;
+
+    out = document.getElementById("result");
+    out.innerHTML = my_meal_plan;
+}
+
 
 function resolveForm (){
     console.log("Getting form values")
