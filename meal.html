@@ -2,8 +2,24 @@
 <html>
  
 <body>
+<title>Dau's Meal</title>
 
-<h2>Getting input</h2>
+<h2>Dau's Meal planner</h2>
+
+<form>
+    <input type="checkbox" id="breakfast" name="meal1" value="True">
+    <label for="breakfast">Breakfast</label><br>
+
+    <input type="checkbox" id="lunch" name="meal2" value="False">
+    <label for="lunch">Lunch</label><br>
+
+    <input type="checkbox" id="dinner" name="meal3" value="True">
+    <label for="dinner">Dinner</label><br>
+
+    <input type="button" onclick="choices()" value="Meal Plan Choices">
+
+</form>
+
 
 <form>
     <label for="form1_age">What is your age </label>
@@ -19,6 +35,18 @@
 <p id="result">This text will be replaced </p>
 
 <script> 
+let my_meal_plan = {};
+
+function choices(){
+    my_meal_plan = {};
+
+    my_meal_plan.breakfast = document.getElementById("breakfast").checked;
+    my_meal_plan.lunch = document.getElementaryById("lunch").checked;
+    my_meal_plan.dinner = document.getElementById("dinner").checked;
+
+    out = document.getElementById("result");
+    out.innerHTML = JSON.string*ify(my_meal_plan);
+}
 
 function resolveForm (){
     console.log("Getting form values")
