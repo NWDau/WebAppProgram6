@@ -77,6 +77,46 @@ function resolveForm (){
 </script>
 
 
+<h2>Choose an Operation</h2> 
+<form> 
+    <input type="radio" id="op_mul" name="operation" value="mul" onclick="chooseOp()">
+    <label for="op_mul">product</label>
+    </br> 
+    <input type="radio" id="op_add" name="operation" value="add" onclick="chooseOp()"> 
+    <label for="op_add">sum</label>
+    </br>
+    <input type="radio" id="op_div" name="operation" value="div" onclick="chooseOp()"> 
+    <label for="op_div">divide</label>
+    </br> 
+ </form> 
+
+<p id="result">This text will be replaced</p> 
+    
+<script> 
+    function chooseOp() {
+        console.log("Getting input") 
+        count = document.getElementById("count").value 
+        discountAt = document.getElementById("discountAt").value
+        mulOpt = document.getElementById("op_mul").checked 
+        addOpt = document.getElementById("op_add").checked 
+        divOpt = document.getElementById("op_div").checked 
+        out = document.getElementById("result") 
+        if(mulOpt)  { 
+            value = count * discountAt
+            out.innerHTML = count + " times " + discountAt + " is " + value 
+        } 
+        
+        if(addOpt)  { 
+            value = Number(count) + Number(discountAt) 
+            out.innerHTML = count + " plus " + discountAt + " is " + value 
+        } 
+            
+        if(divOpt){ 
+            value = count / discountAt
+            out.innerHTML = count + " divided by " + discountAt + " is " + value
+        } 
+    }
+ </script>
 
 
 
